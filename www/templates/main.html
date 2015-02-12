@@ -1,5 +1,5 @@
 <ion-view title="grambler">
-	<ion-pane>
+	<ion-pane ng-controller="MainCtrl as app">
 		<ion-header-bar class="bar-positive">
 			<h1	class="title">grambler anagrams</h1>
 		</ion-header-bar>
@@ -19,7 +19,7 @@
 		<ion-footer-bar	class="bar-stable">
 			<div class="button-bar">
 				<button	class="button button-assertive button-outline icon-left ion-trash-b" ng-click="app.clear()">clear</button>
-				<button	class="button button-stable icon-left ion-information-circled" ng-click="toAbout()">about</button>
+				<button	class="button button-stable icon-left ion-information-circled" ng-click="app.toAbout()">about</button>
 				<!-- <button class="button button-positive button-outline icon-left ion-folder">SAVE</button> -->
 			</div>
 		</ion-footer-bar>
