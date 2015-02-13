@@ -6,13 +6,6 @@
 // the 2nd parameter is an array of 'requires'
 var gramblerApp = angular.module('gramblerApp', ['ionic', 'grambler.controllers'])
 
-/*
-.config(function($httpProvider) {
-	$httpProvider.defaults.useXDomain = true;
-	delete $httpProvider.defaults.headers.common['X-Requested-With'];
-})
-*/
-
 gramblerApp.run(function($ionicPlatform) {
 	$ionicPlatform.ready(function() {
 		// Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -30,13 +23,11 @@ gramblerApp.run(function($ionicPlatform) {
 	$stateProvider
 		.state('main', {
 			url: '/',
-			templateUrl: 'templates/main.html',
-			controller: 'MainCtrl'
+			templateUrl: 'templates/main.html'
 		})
 		.state('about', {
 			url: '/about',
-			templateUrl: 'templates/about.html',
-			controller: 'AboutCtrl'
+			templateUrl: 'templates/about.html'
 		});
 	$urlRouterProvider.otherwise('/');
 });

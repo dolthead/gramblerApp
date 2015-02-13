@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="com.simplybest.grambler" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>grambler</name>
-  <description>
-		An Ionic Framework and Cordova project.
+  <description>&#xD;
+		An Ionic Framework and Cordova project.&#xD;
 	</description>
-  <author email="ionic@simplybest.com" href="https://twitter.com/dolthead">
-		dolthead
+  <author email="ionic@simplybest.com" href="https://twitter.com/dolthead">&#xD;
+		dolthead&#xD;
 	</author>
   <content src="index.html"/>
   <access origin="*"/>
@@ -41,5 +41,5 @@
     <icon src="resources/ios/icon/icon-small.png" width="29" height="29"/>
     <icon src="resources/ios/icon/icon-small@2x.png" width="58" height="58"/>
   </platform>
-  <icon src="resources/ios/icon/icon-40@2x.png"/>
+  <icon src="resources\android\icon\drawable-xhdpi-icon.png"/>
 </widget>
