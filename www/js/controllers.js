@@ -1,7 +1,8 @@
 'use strict';
-angular.module('grambler.controllers', [])
 
-.controller('MainCtrl', function($state, $http) {
+angular.module('gramblerControllers', ['gramblerServices'])
+
+.controller('MainCtrl', function($state, wordService) {
 	var app = this;
 	app.word = 'sample';
 	app.anagrams = [];
@@ -12,15 +13,9 @@ angular.module('grambler.controllers', [])
 		}
 		else {
 			app.word = app.word.replace(/[^A-Za-z]+/gi, "");
-			$http.get("http://tdhale-23cw.xactware.com:8080/grambler/grambler?w=" + escape(app.word), {cache:true})
-				.then(function(resp) {
-						app.anagrams = resp.data.Anagrams;
-					}, function(err) {
-						// err.status will contain the status code
-						console.error('ERR', err);
-						app.anagrams = [{'word':'cannot reach grambler service'},{'word':'check your connection'}];
-					}
-				);
+            wordService.getAnagrams(app.word).then(function(anagrams) {
+                app.anagrams = anagrams;
+            });
 		}
 	};
 	app.keyPress = function(keyEvent) {
