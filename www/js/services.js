@@ -6,7 +6,7 @@ angular.module('gramblerServices', [])
     var anagrams = [];
     return {
         getAnagrams: function(word) {
-            return $http.get("http://tdhale-23cw.xactware.com:8080/grambler/grambler?w=" + escape(word), {cache:true})
+            return $http.get("http://grambler.elasticbeanstalk.com/grambler?w=" + escape(word), {cache:true})
             .then(function(resp) {
                     anagrams = resp.data.Anagrams;
                     return anagrams;
