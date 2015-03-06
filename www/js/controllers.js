@@ -18,15 +18,19 @@ angular.module('gramblerControllers', ['gramblerServices'])
             });
 		}
 	};
-	app.keyPress = function(keyEvent) {
-		if (keyEvent.which === 13)
+	app.keyUp = function(keyEvent) {
+		if (keyEvent.keyCode == 13)
 		{
 			app.scramble();
+		}
+        else if (keyEvent.keyCode == 27)
+		{
+			app.clear();
 		}
 	};
 	app.clear = function() {
 		app.word = '';
-		app.anagrams = [];
+		//app.anagrams = [];
 	};
 	app.toAbout = function() {
 		$state.go('about');
