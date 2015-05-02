@@ -1,0 +1,23 @@
+<ion-view>
+    <ion-content>
+        <div class="item item-input-inset">
+            <label class="item-input-wrapper">
+                <input type="text" ng-model="app.word" ng-keyup="app.keyUp($event)"
+                     autocorrect="off" autocapitalize="off" placeholder="word to scramble" />
+            </label>
+            <button class="button button-small button-positive"
+                    ng-click="app.scramble()">submit</button>
+        </div>
+        <div class="list">
+            <div ng-repeat="anagram in app.anagrams" class="item item-button-right"
+                    ng-class="{ 'favorited': anagram.favorite }">
+                {{anagram.word}}
+                <button class="button button-clear button-positive"
+                        ng-click="app.saveWord($index)">
+                    <i ng-class="anagram.favorite ? 'ion-ios-heart' : 'ion-ios-heart-outline'"
+                            class="icon"></i>
+                </button>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
