@@ -7,15 +7,22 @@
             </label>
             <button class="button button-small button-positive"
                     ng-click="app.scramble()">submit</button>
+            <button class="button button-small button-outline button-positive icon ion-ios-gear"
+                    ng-click="app.scramble()">
+			</button>
         </div>
         <div class="list">
             <div ng-repeat="anagram in app.anagrams" class="item item-button-right"
                     ng-class="{ 'favorited': anagram.favorite }">
                 {{anagram.word}}
-                <button class="button button-clear button-positive"
-                        ng-click="app.saveWord($index)">
+                <button ng-show="anagram.word !== app.word" class="button button-clear button-positive"
+                        ng-click="app.saveWord(anagram)">
                     <i ng-class="anagram.favorite ? 'ion-ios-heart' : 'ion-ios-heart-outline'"
                             class="icon"></i>
+                </button>
+                <button ng-show="anagram.word === app.word" disabled
+						class="button button-clear button-positive">
+                    <i class="icon ion-ios-checkmark-outline"></i>
                 </button>
             </div>
         </div>

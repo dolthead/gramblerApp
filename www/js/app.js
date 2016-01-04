@@ -1,35 +1,31 @@
 (function(){
     
-    // Ionic Starter App
     'use strict';
 
-    // angular.module is a global place for creating, registering and retrieving Angular modules
-    // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-    // the 2nd parameter is an array of 'requires'
-    var gapp = angular.module('gramblerApp', ['ionic']);
+    angular.module('gapp', ['ionic'])
 
-    gapp.config(function($stateProvider, $urlRouterProvider) {
+    .config(function($stateProvider, $urlRouterProvider) {
 
     	$stateProvider
             .state('main', {
-                url: '/',
+                url: '/search',
                 templateUrl: 'templates/search.html',
-                controller: 'MainCtrl as app'
+                controller: 'MainController as app'
             })
             .state('favorites', {
                 url: '/favorites',
-                templateUrl: 'templates/favorites.html'
-//                controller: 'MainCtrl as app'
+                templateUrl: 'templates/favorites.html',
+                controller: 'FavoritesController as favs'
             })
             .state('settings', {
                 url: '/settings',
                 templateUrl: 'templates/settings.html'
             });
         
-        $urlRouterProvider.otherwise('/');
-    });
+        $urlRouterProvider.otherwise('/search');
+    })
 
-    gapp.run(function($ionicPlatform) {
+    .run(function($ionicPlatform) {
         $ionicPlatform.ready(function() {
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
             // for form inputs)

@@ -2,3 +2,13 @@
 favorited {
     font-weight: bold !important;
 }
+.item {
+/*	padding: 8px;*/
+	min-height: 36px;
+}
+.icon {
+	height: 24px;
+}
+.button:after {
+	line-height: 1em !important;
+}
