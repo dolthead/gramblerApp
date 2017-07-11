@@ -8,4 +8,6 @@ plugins/
 www/.idea/*
 
 www/lib/**
+resources/android/**
+resources/ios/**
 
