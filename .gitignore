@@ -6,3 +6,6 @@ platforms/
 plugins/
 
 www/.idea/*
+
+www/lib/**
+
